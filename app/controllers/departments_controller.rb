@@ -12,7 +12,7 @@ class DepartmentsController < ApplicationController
 
     matching_departments = Department.where({ :id => the_id })
 
-    @the_department = matching_departments
+    @the_department = matching_departments.at(0)
 
     render({ :template => "departments/show.html.erb" })
   end
